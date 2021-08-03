@@ -1,0 +1,16 @@
+apply plugin: "com.osacky.fladle"
+
+
+fladle {
+    projectId = "some-project"
+    flankVersion = "21.08.0"
+
+    devices = [
+            [
+                    "model"      : "\"Pixel2\"",
+                    "version"    : "28",
+                    "orientation": "portrait",
+                    "locale"     : "en"
+            ],
+    ]
+}
