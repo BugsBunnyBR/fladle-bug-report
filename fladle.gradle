@@ -8,9 +8,17 @@ fladle {
     devices = [
             [
                     "model"      : "\"Pixel2\"",
-                    "version"    : "28",
+                    "version"    : "\"28\"",
                     "orientation": "portrait",
                     "locale"     : "en"
             ],
     ]
+    configs {
+        free {
+            variant.set("freeDebug")
+        }
+        paid {
+            variant.set("paidDebug")
+        }
+    }
 }

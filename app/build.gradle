@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
-apply from : "${rootProject.projectDir}/fladle.gradle"
+apply from: "${rootProject.projectDir}/fladle.gradle"
 android {
     compileSdk 31
 
@@ -17,6 +17,7 @@ android {
     }
 
     buildTypes {
+        debug {}
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -28,6 +29,18 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    flavorDimensions "app"
+    productFlavors {
+        create("free") {
+            dimension "app"
+            applicationIdSuffix ".free"
+        }
+        create("paid") {
+            dimension "app"
+            applicationIdSuffix ".paid"
+        }
     }
 }
 
